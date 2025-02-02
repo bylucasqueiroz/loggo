@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/bylucasqueiroz/loglib"
+	"github.com/bylucasqueiroz/loggo"
 
 	"github.com/joho/godotenv"
 )
@@ -14,8 +14,8 @@ func main() {
 		log.Println("Warning: No .env file found")
 	}
 
-	logger := loglib.GetLogger()
-	ctx := loglib.WithCorrelationID(context.Background(), "12345-ABCDE")
+	logger := loggo.GetLogger()
+	ctx := loggo.WithCorrelationID(context.Background(), "12345-ABCDE")
 
 	logger.Info(ctx, "Application started")
 	logger.Debug(ctx, "Debugging some logic")

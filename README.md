@@ -24,7 +24,7 @@ This library provides a structured and configurable logging mechanism using [Ube
 ## Installation
 
 ```sh
-go get github.com/bylucasqueiroz/loglib
+go get github.com/bylucasqueiroz/loggo
 ```
 
 ## Usage
@@ -65,7 +65,7 @@ package main
 import (
 	"context"
 	"log"
-	"your_project/loglib"
+	"your_project/loggo"
 	"github.com/joho/godotenv"
 	"os"
 )
@@ -75,8 +75,8 @@ func main() {
 		log.Println("Warning: No .env file found")
 	}
 
-	logger := loglib.GetLogger()
-	ctx := loglib.WithCorrelationID(context.Background(), "12345-ABCDE")
+	logger := loggo.GetLogger()
+	ctx := loggo.WithCorrelationID(context.Background(), "12345-ABCDE")
 
 	logger.Info(ctx, "Application started")
 	logger.Debug(ctx, "Debugging some logic")

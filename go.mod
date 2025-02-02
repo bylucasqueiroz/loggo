@@ -1,4 +1,4 @@
-module github.com/bylucasqueiroz/loglib
+module github.com/bylucasqueiroz/loggo
 
 go 1.23.3
 
