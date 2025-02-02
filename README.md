@@ -37,7 +37,7 @@ Before running your application, set the desired environment variables:
 export LOG_LEVEL=debug
 export LOG_ENV=dev
 export LOG_FORMAT=console
-export CORRELATION_ID_KEY=request_id
+export LOG_CORRELATION_ID_KEY=request_id
 ```
 
 Alternatively, you can use a `.env` file and load it in your application using [github.com/joho/godotenv](https://github.com/joho/godotenv):
@@ -54,7 +54,7 @@ go get github.com/joho/godotenv
 LOG_LEVEL=debug
 LOG_ENV=dev
 LOG_FORMAT=console
-CORRELATION_ID_KEY=request_id
+LOG_CORRELATION_ID_KEY=request_id
 ```
 
 3. Load it in your application:
@@ -65,7 +65,7 @@ package main
 import (
 	"context"
 	"log"
-	"your_project/loggo"
+	"github.com/bylucasqueiroz/loggo"
 	"github.com/joho/godotenv"
 	"os"
 )
@@ -112,7 +112,7 @@ func main() {
 ### Context Management (`context.go`)
 
 - Handles correlation ID generation and retrieval from context.
-- The correlation ID key is now configurable using `CORRELATION_ID_KEY`, allowing flexibility in log tracking.
+- The correlation ID key is now configurable using `LOG_CORRELATION_ID_KEY`, allowing flexibility in log tracking.
 
 ## License
 
